@@ -7,12 +7,66 @@
 \maketitle
 
 %%%% Topic %%%%
+\subsection*{Erasure Codes}
+%%%% Notes %%%%
+%%%% Topic %%%%
+\subsection*{Encoding}
+%%%% Notes %%%%
+%%%% Topic %%%%
+\subsection*{Etc.}
+%%%% Notes %%%%
+%%%% Topic %%%%
 \subsection*{Error Correction}
 %%%% Notes %%%%
 \begin{itemize}
-\item Content
+\item Need to recover information sent AND which packets are corrupted
+\item Send $n+2k$ packets because if $k$ errors exist, multiple original messages are possible if $< n+2k$ packets sent.
 \end{itemize}
 \begin{mdframed}
-\textbf{Highlight:}\\
+\textbf{Reed-Solomon Code:}
+\begin{enumerate}[1.]
+\item Encoding polynomial $P(x)$ of degree n-1
+    \begin{itemize}
+    \item $P(1) = m_1,..., P(n) = m_n$
+    \item Can encode with packets as coefficients (check HW6)
+    \end{itemize}
+\item Send $(P1), ..., P(n+2k)$
+\item After noisy channel, receive $R(1), ..., R(n+2k)$
+\item $P(i) = R(i)$ for at least $n+k$ points $i$; $P(i) \ne R(i)$ for $k$ points
+\item Do not know where errors occurred
+\item $P(x) =$ unique degree $n-1$ polynomial
+\end{enumerate}
+\textbf{Error Locator Polynomial:} $\boldsymbol{E(x)=(x-e_1)(x-e_2)\cdots(x-e_k)}$
+\begin{itemize}
+\item Errors at points $e_1, ... e_k$; E(i) = 0 iff $e_j = i$ for some $j$; $E(x)$ has degree $k$
+\item Idea: Multiply equation $i$ by $E(x) = (x - i)$ iff $P(i) \ne R(i)$, but this creates $n+2k$ \textbf{non-linear} equations with $n_k$ unknowns.
+\item \textbf{Solution:} Let $Q(x) = E(x)P(x) = a_{n+k-1}x^{n+k-1} + \cdots + a_0$
+    \begin{itemize}
+    \item Now you have $n+2k$ linear equations $Q(i) = R(i)E(i)$
+    \item \textbf{Find $E(x)$ and $Q(x)$}
+        \begin{itemize}
+            \item $E(x) = x^k+b_{k-1}x^{k-1}\vdots b_0$ w/ $k$ unknown coefficients
+            \item $Q(x) = a_{n+k-1}x^{n+k-1} + \cdots + a_0$ w/ $n+k$ unknown coefficients
+            \item Total Unknowns: $n+2k$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{mdframed}
+\begin{mdframed}
+\textbf{RS Code Example:}
+\begin{itemize}
+\item Message 3,0,6
+\item RS Code: $P(x) = x^2 + x + 1 \pmod{7}$ where $P(1) = 3, P(2) = 0, P(3) = 6$
+\item Tolerate $k = 1$ errors, so send $n+2k = 5$ packets
+\item Send: $P(1) = 3, P(2) = 0, P(3) = 6, P(4) = 0, P(5) = 3$
+\item $R(i) = P(i)$ except $R(2) = 1$ $\leftarrow$ Do not know where this occurred. Agree at $n+k = 4$ places
+\end{itemize}
+\end{mdframed}
+\begin{mdframed}
+\textbf{Brute force: BAD}
+\begin{itemize}
+\item Remove every possible combination of $k$ received packets one at a time and form a degree $n+k-1$ polynomial with remaining $n+k$ points. First consistent solution gives the corrupted packet.
+\item Runtime: $(n/k)^k$: exponential in $k$ with $\binom{n+2k}{k}$ possibilities
+\end{itemize}
 \end{mdframed}
 \end{document}
