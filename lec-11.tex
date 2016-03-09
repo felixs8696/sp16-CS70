@@ -77,7 +77,7 @@ Need to know which $x$-value the correct packets correspond to\\
     \item $P(1) = m_1,..., P(n) = m_n$
     \item Can encode with packets as coefficients (check HW6)
     \end{itemize}
-\item Use \texbf{Lagrange Interpolation} to get $P(x)$
+\item Use \textbf{Lagrange Interpolation} to get $P(x)$
 \item Send $(P1), ..., P(n+2k)$
 \item After noisy channel, receive $R(1), ..., R(n+2k)$
 \item $P(i) = R(i)$ for at least $n+k$ points $i$; $P(i) \ne R(i)$ for $k$ points
@@ -119,7 +119,7 @@ Need to know which $x$-value the correct packets correspond to\\
 \item Send: $P(1) = 3, P(2) = 0, P(3) = 6, P(4) = 0, P(5) = 3$
 \item Receive: $R(1) = 3, R(2) = 1, R(3) = 6, R(4) = 0, R(5) = 3$
 \end{itemize}
-\textbf{Solution:}
+\textbf{Solution: Berklekamp-Welsh Algorithm}
 \begin{itemize}
 \item $Q(x) = E(x)P(x) = a_3x^3+a_2x^2+a_1x+a_0$
 \item $E(x) = x-b_0$
