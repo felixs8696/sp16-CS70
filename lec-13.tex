@@ -121,4 +121,27 @@
     \item Contradiction, so $HALT(P,P)$ does not exist
 \end{itemize}
 \end{mdframed}
+
+\begin{mdframed}
+\textbf{Halt Diagonlization Proof:}
+\begin{itemize}
+    \item Program and input are both enumerable (fixed length strings)
+    \item Program either halts or loops on any input
+    \item Create list: $P_i \rightarrow {P_j(P)}$ where $i,j \in \N$ 
+    \item Each entry of list is arbitrarily $HALT$ or $LOOP$
+    \item Diagonal exists, so create $Turing()$ s.t. it returns opposite values along the diagonal
+    \item This means $Turing()$ is not in the list $\implies Turing()$ is not a prgoram
+    \begin{itemize}
+        \item $Turing$ is a simple function constructed from $HALT$
+        \item $\therefore\, Turing()$ DNE $\implies HALT()$ DNE
+    \end{itemize}
+\end{itemize}
+\end{mdframed}
+
+%%%% Topic %%%%
+\subsection*{Undecidable Problems}
+%%%% Notes %%%%
+\begin{itemize}
+    \item 
+\end{itemize}
 \end{document}
