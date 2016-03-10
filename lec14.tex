@@ -7,12 +7,52 @@
 \maketitle
 
 %%%% Topic %%%%
-\subsection*{Topic}
+\subsection*{Counting}
 %%%% Notes %%%%
+\textbf{Tree Counting: Slow}
 \begin{itemize}
-\item Content
+    \item Build up string by bits, total amount of leaves is total possibilities
 \end{itemize}
 \begin{mdframed}
-\textbf{Highlight:}\\
+\textbf{First Rule of Counting: Product Rule:}
+\begin{itemize}
+    \item If objects constructed from a sequence of choices $n_1, n_2, ..., n_k$
+    \item Total number of objects = $n_1 \times n_2 \times \cdots \times n_k$
+\end{itemize}
+\end{mdframed}
+
+\textbf{Counting Functions/Polynomials}
+\begin{itemize}
+    \item There are $|T|^{|s|}$ functions $f : S \rightarrow T$
+    \begin{itemize}
+        \item $|T|$ choices for mapping of $f(s_i)$ (Use product rule)
+    \end{itemize}
+    \item $p^{d+1}$ polynomials of degree $d \bmod{p}$
+    \begin{itemize}
+        \item $p$ choices for each of the $d+1$ coefficients
+    \end{itemize}
+\end{itemize}
+
+\textbf{Permutations}
+\begin{itemize}
+    \item Derived from the first rule of counting (product rule)
+    \item Choose from less items each step
+    \item Permutations of $n$ objects: number of orderings of $n$ objects (no replacements)
+    \begin{itemize}
+        \item $n \times (n-1) \times (n-2) \times\cdots \times 1 = n!$
+    \end{itemize}
+    \item Number of one to one functions $|S| \rightarrow |S|$ 
+    \begin{itemize}
+        \item Decreasing choices every step: $|S| \times |S|-1 \times \cdots \times 1 = |S|!$
+    \end{itemize}
+\end{itemize}
+\begin{mdframed}
+\textbf{Permutations}
+\begin{itemize}
+    \item Number of different samples of saize $k$ from $n$ numbers \textbf{without replacement}
+    \begin{itemize}
+        \item $n \times (n-1) \times (n-2) \times\cdots \times (n-(k-1)) = \frac{n!}{(n-k)!}$
+    \end{itemize}
+\end{itemize}
 \end{mdframed}
 \end{document}
