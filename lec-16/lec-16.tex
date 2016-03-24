@@ -85,6 +85,10 @@ $\pr[B]=\pr[B\cap A_1]+\cdots+\pr[B\cap A_N]$
     \item Let $m$ = number of situations where $A \x{and} B$ occurred, and $n$ = number of situations where $\bar{A} \x{and} B$ occurred.
     \item Therefore: $\pr[A|B]=\frac{m}{m+n}$
 \end{itemize}
+\begin{mdframed}
+\textbf{Bayes Rule} (Simplified using Law of Total Probability)
+\begin{equation}\pr[A_n|B] =\frac{\pr[A_n]\pr[B|A_n]}{\sum\limits_m\pr[A_m]\pr[B|A_m]}=\frac{\pr[A_n]\pr[B|A_n]}{\pr[B]}\end{equation}
+\end{mdframed}
 \subsection*{Independence}
 %%%% Notes %%%%
 \begin{itemize}
@@ -92,4 +96,9 @@ $\pr[B]=\pr[B\cap A_1]+\cdots+\pr[B\cap A_N]$
     \item Two events $A$ and $B$ are independent if and only if $\pr[A|B]=\pr[A]$
     \item $\pr[A]$ decreases/increases given $B$
 \end{itemize}
+\begin{mdframed}
+If $A$ and $B$ are \textbf{independent} sets:
+\begin{equation}\pr[\bar{A}\cap \bar{B}]=1-A\cup B\end{equation}
+\begin{equation}\pr[A\cap B]=\pr[A]+\pr[B]-\pr[A\cup B]\end{equation}
+\end{mdframed}
 \end{document}
