@@ -1,0 +1,97 @@
+\documentclass{article}\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow, listings}\newcommand*{\QEDB}{\hfill\ensuremath{\square}}\newtheorem*{prop}{Proposition}\renewcommand{\theenumi}{\alph{enumi}}\usepackage[shortlabels]{enumitem}\usepackage[nobreak=true]{mdframed}\usetikzlibrary{matrix,calc}\MakeOuterQuote{"}\usepackage[margin=0.75in]{geometry} \newtheorem{theorem}{Theorem}\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}\newcommand{\Q}{\mathbb Q}\newcommand{\N}{\mathbb N}\newcommand{\x}[1]{\textrm{ #1 }}\newcommand{\pr}{\textrm{Pr}}
+\newcommand{\dincludegraphics}{\includegraphics[width=0.5\textwidth]}
+\newcommand{\tincludegraphics}{\includegraphics[width=0.33\textwidth]}
+\newcommand{\sumlim}[3]{\sum\limits_{#1}^{#2}#3}
+\newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
+
+\title{CS70 - Midterm 2 Notes}
+\author{Name: Felix Su$\quad$SID: 25794773}
+\date{Spring 2016$\quad$GSI: Gerald Zhang}
+\begin{document}
+\maketitle
+
+%%%% Topic %%%%
+\subsection*{Counting}
+%%%% Notes %%%%
+\textbf{Combinations and Permutations}
+\begin{itemize}
+    \item Order
+    \begin{itemize}
+        \item Matters:
+        \item Doesn't Matter:
+    \end{itemize}
+    \item Replacement
+    \begin{itemize}
+        \item With:
+        \item Without:
+    \end{itemize}
+\end{itemize}
+\begin{mdframed}
+\textbf{Highlight:}
+\end{mdframed}
+
+%%%% Topic %%%%
+\subsection*{Halt Program}
+%%%% Notes %%%%
+\textbf{Reduction}
+\begin{itemize}
+    \item Disprove program's existance by reducing to "I can use this program to solve HALT"
+\end{itemize}
+\begin{mdframed}
+\textbf{Highlight:}
+\end{mdframed}
+%%%%%%%%%%%%%%$
+\textbf{Diagonlization}
+\begin{itemize}
+    \item Listing
+\end{itemize}
+\begin{mdframed}
+\textbf{Highlight:}
+\end{mdframed}
+%%%%%%%%%%%%%%$
+\textbf{Turing Program}
+\begin{itemize}
+    \item 
+\end{itemize}
+\begin{mdframed}
+\textbf{Highlight:}
+\end{mdframed}
+
+%%%% Topic %%%%
+\subsection*{Probability}
+%%%% Notes %%%%
+\textbf{Bayes' Rule}
+\begin{itemize}
+    \item Content
+\end{itemize}
+\begin{mdframed}
+\eq{\pr[A|B]=\frac{\pr[A]\pr[B|A]}{\pr[B]}}
+\textbf{Uses}
+\begin{itemize}
+    \item Find denominator for Bayes' Rule problem
+    \item Get probability of any event that has prior probabilities
+\end{itemize}
+\end{mdframed}
+%%%%%%%%%%%%%%%
+\textbf{Product Rule}
+\begin{itemize}
+    \item Content
+\end{itemize}
+\begin{mdframed}
+Highlight:
+\end{mdframed}
+%%%%%%%%%%%%%%%
+\textbf{Law of Total Probabilities}
+\begin{itemize}
+    \item Probability of event $B$ is equivalent to the sum of the product of each of $B$'s prior probabilities and the chance of $B$ occuring given that prior probability.
+\end{itemize}
+\begin{mdframed}
+\eq{\pr[B]=\pr[A_1]\pr[B|A_1]+\cdots+\pr[A_n]\pr[B|A_n]}
+\textbf{Uses}
+\begin{itemize}
+    \item Find denominator for Bayes' Rule problem
+    \item Get probability of any event that has prior probabilities
+\end{itemize}
+\end{mdframed}
+
+\end{document}

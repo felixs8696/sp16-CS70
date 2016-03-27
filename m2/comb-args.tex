@@ -1,0 +1,39 @@
+\documentclass{article}\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow, listings}\newcommand*{\QEDB}{\hfill\ensuremath{\square}}\newtheorem*{prop}{Proposition}\renewcommand{\theenumi}{\alph{enumi}}\usepackage[shortlabels]{enumitem}\usepackage[nobreak=true]{mdframed}\usetikzlibrary{matrix,calc}\MakeOuterQuote{"}\usepackage[margin=0.75in]{geometry} \newtheorem{theorem}{Theorem}\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}\newcommand{\Q}{\mathbb Q}\newcommand{\N}{\mathbb N}\newcommand{\x}[1]{\textrm{ #1 }}\newcommand{\pr}{\textrm{Pr}}
+\newcommand{\dincludegraphics}{\includegraphics[width=0.5\textwidth]}
+\newcommand{\tincludegraphics}{\includegraphics[width=0.33\textwidth]}
+\newcommand{\sumlim}[3]{\sum\limits_{#1}^{#2}#3}
+
+\title{CS70 - Combinatorial Arguments}
+\author{Name: Felix Su$\quad$SID: 25794773}
+\date{Spring 2016$\quad$GSI: Gerald Zhang}
+\begin{document}
+\maketitle
+
+%%%% Topic %%%%
+\subsection*{Strategy}
+%%%% Notes %%%%
+\begin{enumerate}[1.]
+    \item Define equivalent quantity $Q$
+    \item Count $Q$ in a way to determine $LHS=Q$
+    \item Count $Q$ in a way to determine $RHS=Q$
+    \item Conclude $LHS=RHS$
+\end{enumerate}
+%%%% Topic %%%%
+\subsection*{Examples}
+%%%% Notes %%%%
+\begin{mdframed}
+\begin{equation}2^n=\sumlim{k=0}{n}{\binom{n}{k}}\end{equation}
+\textbf{LHS:} Using counting product rule, this is the number subsets of $n$ decided by either choosing or not choosing each item. There are a total of $2^n$ possible subsets of size $k \in (0,n)$ from a total of $n$ items.\\\\
+\textbf{RHS:} The summation of all possible ways to choose $k \in (0,n)$ items from $n$, which is the same as left.
+\end{mdframed}
+\begin{mdframed}
+\begin{equation}\sumlim{m=k}{n}{\binom{m}{k}}=\binom{n+1}{k+1}\end{equation}
+\textbf{LHS:} \\\\
+\textbf{RHS:} 
+\end{mdframed}
+\begin{mdframed}
+\begin{equation}\sumlim{k=0}{n}{\binom{m+k}{k}}=\binom{n+m+1}{n}\end{equation}
+\textbf{LHS:} \\\\
+\textbf{RHS:} 
+\end{mdframed}
+\end{document}
