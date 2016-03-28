@@ -18,7 +18,17 @@
     \item Count $Q$ in a way to determine $LHS=Q$
     \item Count $Q$ in a way to determine $RHS=Q$
     \item Conclude $LHS=RHS$
+    \item \textbf{Review: 2,3,4,7,8,9}
 \end{enumerate}
+%%%% Topic %%%%
+\subsection*{Hints}
+%%%% Notes %%%%
+\begin{itemize}
+    \item $\binom{n}{k}\equiv\binom{n}{n-k}$: Include $k$ out of $n$ items = Do not include $n-k$ items
+    \item $2^n$= All possible ways to choose any number of $n$ items. Counting Product Rule.
+    \item $\sum\binom{n}{k}=\binom{n+1}{k+1} \rightarrow$ set one value to include and pick remaining.
+    \item $\sum\binom{n}{k}=\binom{n+1}{k} \rightarrow$ set aside one value to not include and pick remaining.
+\end{itemize}
 %%%% Topic %%%%
 \subsection*{Examples}
 %%%% Notes %%%%
@@ -59,7 +69,17 @@
 \end{mdframed}
 \begin{mdframed}
 \eq{\sumlim{k=0}{n}k\binom{n}{k}=n2^{n-1}}
-\textbf{LHS:} \\\\
-\textbf{RHS:} 
+\textbf{LHS:} Pick a team of size $k$, then pick the captain out of the $k$ people on the team. All possible sizes of the team is $k=(0,n)$, so sum all those possibilities.\\\\
+\textbf{RHS:} Pick one of $n$ people to be a captain. For each rest of the $n-1$ people, choose whether or not to include him/her on the team. (Counting)
+\end{mdframed}
+\begin{mdframed}
+\eq{\sumlim{k=j}{n}\binom{n}{k}\binom{k}{j}=2^{n-j}\binom{n}{j}}
+\textbf{LHS:} Select a team of size $k$ from $n$ students, then choose $j$ leaders from the $k$ team members. Sum all the probabilities for teams of size $j$ to $n$ \\\\
+\textbf{RHS:} Out of $n$ students, choose $j$ leaders, out of the remaining $n-j$ people, select whether or not each will be on the team.
+\end{mdframed}
+\begin{mdframed}
+\eq{\sumlim{i=0}{k}\binom{m}{i}\binom{n}{k-i}=\binom{m+n}{k}}
+\textbf{LHS:} Split a collection of $m$ fiction and $n$ non-finction books into a set of $m$ fiction books and $n$ non-fiction books. Select $k$ total books by selecting $i$ books from the fiction pile and the remaining $k-i$ from the non-finction pile. This is the same as RHS.\\\\
+\textbf{RHS:} All possible ways to directly choose $k$ books from a collection of $m$ fiction and $n$ non-fiction books.
 \end{mdframed}
 \end{document}
