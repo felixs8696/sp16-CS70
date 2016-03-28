@@ -2,6 +2,7 @@
 \newcommand{\dincludegraphics}{\includegraphics[width=0.5\textwidth]}
 \newcommand{\tincludegraphics}{\includegraphics[width=0.33\textwidth]}
 \newcommand{\sumlim}[3]{\sum\limits_{#1}^{#2}#3}
+\newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
 
 \title{CS70 - Combinatorial Arguments}
 \author{Name: Felix Su$\quad$SID: 25794773}
@@ -32,8 +33,33 @@
 \textbf{RHS:} 
 \end{mdframed}
 \begin{mdframed}
-\begin{equation}\sumlim{k=0}{n}{\binom{m+k}{k}}=\binom{n+m+1}{n}\end{equation}
+\eq{\sumlim{k=0}{n}{\binom{m+k}{k}}=\binom{n+m+1}{n}}
+\textbf{LHS:} Specify the smallest element from $\{1,\cdots,n+m+1\}$ not in the selected subset. If it is 1, you must choose the remaining $n$ items from $\{2,\cdots,n+m+1\}$, $\binom{m+n}{n}$, which is the $k=n$ term. If it is 2, 1 is included in the subset, so you only need to choose from $n-1$ remaining items from $\{2,\cdots,n+m+1\}$, $\binom{m+n-1}{n-1}$. This continues down to having the smallest number not in the set be $n+1$, which would cause, $\binom{m+0}{0}$. This equates to all possible ways to select select $n$ items from $n+m+1$ choices\\\\
+\textbf{RHS:} All possible ways to select select $n$ items from $n+m+1$ choices.
+\end{mdframed}
+\begin{mdframed}
+\eq{\sumlim{k=0}{n}{\binom{n}{k}^2}=\binom{2n}{n}}
+\textbf{LHS:} Split $\{\pm1,\cdots,\pm n\}$ into 2 sets, 1 of positive and 1 of negative elements. Choose $k$ positive items and $n-k$ negative items (which is still equivalent to $\binom{n}{k}$). This is equivalent to choosing $n$ items out of $\{\pm1,\cdots,\pm n\}$.\\\\
+\textbf{RHS:} All possible ways to directly choose $n$ items out of $\{\pm1,\cdots,\pm n\}$.
+\end{mdframed}
+\begin{mdframed}
+\eq{\sumlim{k=0}{r}{\binom{m}{k}\binom{n}{r-k}}=\binom{n+m}{r}}
+\textbf{LHS:} Split the collection of books into a set of textbooks and one of comic books. Select $k$ books from the set of textbooks and $r-k$ books from the set of $m$ comic books. This is the same as selecting $r$ total books from a collection of $n$ textbooks and $m$ comic books.\\\\
+\textbf{RHS:} Choose $r$ books from a collection of $n$ textbooks and $m$ comic books.
+\end{mdframed}
+\begin{mdframed}
+\eq{\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}}
+\textbf{LHS:} All possible ways to select $k$ items from a collection of $n$ choices.\\\\
+\textbf{RHS:} Set aside one element. Assuming this item must be in the selected subset of $k$ items, select the remaining $k-1$ items from the remaining $n-1$ choices $\binom{n-1}{k-1}$. Then assume the item set aside is not in the selected subset of $k$ items. Select the rest of the $k$ items from the remaining $n-1$ choices $\binom{n-1}{k}$. These two disjoint sets add up to the original selection of $k$ items from $n$ choices
+\end{mdframed}
+\begin{mdframed}
+\eq{\binom{2n}{2}=2\binom{n}{2}+n^2}
+\textbf{LHS:} All possible ways to choose 2 items from a set of $2n$ choices.\\\\
+\textbf{RHS:} There are 3 ways to choose $2$ items from a set of $2n$ choices if you split the $2n$ choices into 2 sets of $n$ choices. You can choose both from the first set of $n$ choices $\binom{n}{2}$, choose both from the second set of $n$ choices $\binom{n}{2}$, or you can choose 1 from each set $\binom{n}{1}^2=n^2$. Add these disjoint sets together to get LHS.
+\end{mdframed}
+\begin{mdframed}
+\eq{\sumlim{k=0}{n}k\binom{n}{k}=n2^{n-1}}
 \textbf{LHS:} \\\\
-\textbf{RHS:} 
+\textbf{RHS:} q\
 \end{mdframed}
 \end{document}
