@@ -1,0 +1,35 @@
+\documentclass{article}\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow, listings}\newcommand*{\QEDB}{\hfill\ensuremath{\square}}\newtheorem*{prop}{Proposition}\renewcommand{\theenumi}{\alph{enumi}}\usepackage[shortlabels]{enumitem}\usepackage[nobreak=true]{mdframed}\usetikzlibrary{matrix,calc}\MakeOuterQuote{"}\usepackage[margin=0.75in]{geometry} \newtheorem{theorem}{Theorem}\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}\newcommand{\Q}{\mathbb Q}\newcommand{\N}{\mathbb N}\newcommand{\x}[1]{\textrm{ #1 }}\newcommand{\pr}{\textrm{Pr}}
+\newcommand{\dincludegraphics}{\includegraphics[width=0.5\textwidth]}
+\newcommand{\tincludegraphics}{\includegraphics[width=0.33\textwidth]}
+\newcommand{\sumlim}[3]{\sum\limits_{#1}^{#2}#3}
+\newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
+
+\title{CS70 - Lecture 18 Notes}
+\author{Name: Felix Su$\quad$SID: 25794773}
+\date{Spring 2016$\quad$GSI: Gerald Zhang}
+\begin{document}
+\maketitle
+
+%%%% Topic %%%%
+\subsection*{Random Variables}
+%%%% Notes %%%%
+\begin{itemize}
+    \item Random variable is a known, deterministic, function that maps outcome to a number (onto, but not necessarily one-to-one)
+    \item Random Variable $X$ for an experiment with sample space $\Omega$ is a function $X: \Omega \rightarrow \R$
+    \begin{itemize}
+        \item $X$ assigns $X(\omega) \in \R$ to each $\omega \in \Omega$
+        \item $X$ is not random, nor a variable, it is called a random variable, because its outcome depends on the intial probability/experiment (varies from experiment to experiment)
+        \item After deriving $X$ and knowing the initial probabilities, can determine the likelihood of each outcome of $X$
+    \end{itemize}
+    \item $X^{-1}(A)=\{\omega|X(\omega)=A\}$: Inverse image of value $A$
+    \begin{itemize}
+        \item Set of outcomes that map to $A$
+    \end{itemize}
+\end{itemize}
+\textbf{Distribution}
+\begin{itemize}
+    \item The probability of $X$ taking on a value $A$.
+    \item Definition: The distribution of a random variable $X$ is $\{(a,\pr[X=a]):a \in \mathbb{A}\}$ where $\mathbb{A}$ is the range of $X$
+    \item $\pr[X=A]=\pr[X^{-1}(A)]$
+\end{itemize}
+\end{document}

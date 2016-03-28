@@ -29,8 +29,8 @@
 \end{mdframed}
 \begin{mdframed}
 \begin{equation}\sumlim{m=k}{n}{\binom{m}{k}}=\binom{n+1}{k+1}\end{equation}
-\textbf{LHS:} \\\\
-\textbf{RHS:} 
+\textbf{LHS:} For each iteration of the summation, set aside a largest element $l$ then choose the remaining $k$ elements to obtain a subset of $n$ that is size $k+1$. Such that you only pick items less than $l$, limiting you to $m$ items to choose from. All combinations of this is the same as RHS.\\\\
+\textbf{RHS:} All possible subsets of $\{1,\cdots,n+1\}$ that are size $k+1$.
 \end{mdframed}
 \begin{mdframed}
 \eq{\sumlim{k=0}{n}{\binom{m+k}{k}}=\binom{n+m+1}{n}}
@@ -60,6 +60,6 @@
 \begin{mdframed}
 \eq{\sumlim{k=0}{n}k\binom{n}{k}=n2^{n-1}}
 \textbf{LHS:} \\\\
-\textbf{RHS:} q\
+\textbf{RHS:} 
 \end{mdframed}
 \end{document}
