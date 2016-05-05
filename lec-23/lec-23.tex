@@ -151,6 +151,58 @@ Given $\pr{Y = y|X = x} =\frac{\pr{X=x,Y =y}}{\pr{X=x}}$
     }
 }
 %%%% Topic %%%%
+\subsection*{Application: Going Viral}
+%%%% Notes %%%%
+\items{
+    \item \textbf{Fact:} Let $X = \sumlim{n=1}{\infty}{X_n}$. Then, $\E{X} < \infty$ iff $pd < 1$
+    \item \textbf{Proof:}
+    \item Given $X_n = k, X_{n+1} = B(kd,p)$. Hence, $\E{X_{n+1}|X_n = k} = kpd$
+    \item Thus, $\E{X_{n+1}|X_n} = pdX_n$. Consequently, $\E{X_n} = (pd)^{n-1},n \ge 1$.
+    \item If $pd < 1$, then $\E{X_1+\cdots+X_n} \le (1-pd)-1 \implies \E{X} \le (1-pd)-1$
+    \item If $pd \ge 1$, then for all $C$ one can find $n$ s.t. $\E{X} \ge \E{X_1+\cdots+X_n} \ge C$.
+    \item In fact, one can show that $pd \ge 1 \implies \pr{X = \infty} > 0$
+}
+%%%% Topic %%%%
+\subsection*{Wald's Identity}
+%%%% Notes %%%%
+\items{
+    \item Assume that $X_1,X_2,\ldots$ and $Z$ are independent, where $Z$ takes values in $\set{0,1,2,\ldots}$
+    \item and $\E{X_n} = \mu$ for all $n \ge 1$
+    \item Then, $\E{X_1 +\cdots+X_Z } = \mu\E{Z}$
+    \item \textbf{Proof:}
+    \items{
+        \item $\E{X_1 +\cdots+X_Z |Z = k} = \mu k$
+        \item Thus, $\E{X_1 +\cdots+X_Z |Z} = \mu Z$
+        \item Hence, $\E{X_1 +\cdots+X_Z } = \E{\mu Z} = \mu \E{Z}$
+    }
+}
+\eqs{
+\textbf{Wald's Identity}\\
+If $X_1,X_2,\ldots$ and $Z$ are independent, where $Z \in \set{0,1,2,\ldots}$ and $\E{X_n} = \mu, \forall n \ge 1$
+\eq{\E{X_1 +\cdots+X_Z } = \mu\E{Z}}
+}
+%%%% Topic %%%%
+\subsection*{Conditional Expectation Best Guess (CE=MMSE)}
+%%%% Notes %%%%
+\simple{
+    \item $\E{Y|X}$ is the ‘best’ guess about $Y$ based on $X$.
+    \item Specifically, it is the function $g(X)$ that minimizes $\E{(Y-g(X))^2}$
+}
+\items{
+    \item \textbf{Thm:} $CE = MMSE$
+    \items{
+        \item $g(X) = \E{Y|X}$ is the function of $X$ that minimizes $\E{(Y-g(X))^2}$
+    }
+    \item \textbf{Proof:}
+    \items{
+        \item Let $h(X)$ be any function of $X$.
+        \item Then $\E{(Y-h(X))^2} = \E{(Y-g(X) +g(X)-h(X))^2}$
+        \item $= \E{(Y-g(X))^2} +\E{(g(X)-h(X))^2}+2\E{(Y-g(X))(g(X)-h(X))}$
+        \item But, $\E{(Y-g(X))(g(X)-h(X))} = 0$ by the projection property.
+        \item Thus, $\E{(Y-h(X))^2} \ge \E{(Y-g(X))^2}$
+    }
+}
+%%%% Topic %%%%
 \subsection*{Summary}
 %%%% Notes %%%%
 \simple{
