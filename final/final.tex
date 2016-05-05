@@ -1,0 +1,83 @@
+\documentclass{article}\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow,listings, mathrsfs,framed,scrextend}\newcommand*{\QEDB}{\hfill\ensuremath{\square}}\newtheorem*{prop}{Proposition}\renewcommand{\theenumi}{\alph{enumi}}\usepackage[shortlabels]{enumitem}\usepackage[nobreak=true]{mdframed}\usetikzlibrary{matrix,calc}\MakeOuterQuote{"}\usepackage[margin=0.75in]{geometry} \newtheorem{theorem}{Theorem}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\N}{\mathbb N}
+\newcommand{\x}[1]{\textrm{#1}}
+\newcommand{\pr}[1]{\textrm{Pr}[#1]}
+\newcommand{\xs}[1]{\textrm{ #1 }}
+\newcommand{\dpic}[1]{\begin{center}\includegraphics[width=0.5\textwidth]{#1}\end{center}}
+\newcommand{\tpic}[1]{\begin{center}\includegraphics[width=0.33\textwidth]{#1}\end{center}}
+\newcommand{\wpic}[1]{\begin{center}\includegraphics[width=0.8\textwidth]{#1}\end{center}}
+\newcommand{\sumlim}[3]{\sum\limits_{#1}^{#2}#3}
+\newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\eqx}[1]{\begin{equation*}#1\end{equation*}}
+\newcommand{\w}{\omega}\newcommand{\Om}{\Omega}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\renewenvironment{leftbar}[2][\hsize]
+{
+    \def\FrameCommand
+    {
+        {\color{#2}\vrule width 3pt}
+        \hspace{0pt}
+    }
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}
+}
+{\endMakeFramed}
+\newcommand{\easy}[2]{\begin{leftbar}{#1}#2\end{leftbar}}
+\newcommand{\eqs}[1]{\begin{mdframed}#1\end{mdframed}}
+\newcommand{\simple}[1]{\easy{gray}{\begin{enumerate}[1.]#1\end{enumerate}}}
+\providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\items}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\rng}[2]{#1,\ldots,#2}
+\newcommand{\E}[1]{E[#1]}
+\newcommand{\var}[1]{\x{Var}[#1]}
+\newcommand{\e}{\varepsilon}
+\newcommand{\limty}{\lim_{n\rightarrow\infty}}
+\newcommand{\ninfty}{n\rightarrow\infty}
+
+\title{CS70 - Final Notes}
+\author{Name: Felix Su$\quad$SID: 25794773}
+\date{Spring 2016$\quad$GSI: Gerald Zhang}
+\begin{document}
+\maketitle
+
+%%%% Topic %%%%
+\subsection*{Probability Summary}
+%%%% Notes %%%%
+\wpic{prob_map}
+\simple{
+    \item Probability Space - probability of events
+        \items{
+        \item Conditional Probability
+        \items{
+            \item Bayes Rules - prob. is additive/def. of cond. prob.
+            \items{
+                \item Maximum Aposterori/Maximum Likely Estimates
+            }
+            \item Indpendence
+        }
+        \item Random Variables
+        \items{
+            \item Ind. of events $\rightarrow$ Ind. of RVs
+            \item Expectation of RVs
+            \items{
+                \item Exp. of Product of RVs = product of expected values ($\E{XY}=\E{X}\E{Y}$)
+                \item Linearity of Expectation = sum of expected values ($\E{X+Y}=\E{X}+\E{Y}$)
+                \items{
+                    \item Variance of sum of RVs = sum of Var of each RV
+                }
+                \item Monotonicity of Expectation - If $Y > X, \E{Y}>\E{X}$
+                \items{
+                    \item Chebyshev’s Inequality $\rightarrow$ Weak Law of Large Numbers
+                }
+            }
+        }
+    }
+}
+\eqs{
+\textbf{Highlight:}
+\eq{}
+}
+\end{document}
