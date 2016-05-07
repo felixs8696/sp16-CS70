@@ -191,7 +191,7 @@ There is a unique positive vector $\pi = \bmat{\pi(1)&\ldots&\pi(K)}$ such that
 \dpic{fot2}
 \subsection*{Convergence to Invariant Distribution}
 \items{
-    \item Assuming the MC is irreducible $\pi_n$ does not necessarily approach the unique invariant distribution $\pi$
+    \item Assuming the MC is irreducible $\pi_n$ does not necessarily approach a unique invariant distribution $\pi$
     \item \textbf{Example:}
 }
 \dpic{converge}
@@ -201,6 +201,9 @@ Thus, if $\pi0 = [1,0], \pi1 = [0,1], \pi2 = [1,0], \pi3 = [0,1]$, etc.\\
 Hence, $\pi_n$ does not converge to $\pi = [1/2,1/2]$.
 \end{mdleftbar}
 \subsection*{Periodicity}
+\simple{
+    \item If the Markov chain is irreducible, $d(i)$ is the same for all $i$. Check for 1 state.
+}
 \items{
 \item \textbf{Definition} If $d(i) = 1$, the Markov chain is said to be \textbf{aperiodic}.
     \items{
@@ -208,9 +211,9 @@ Hence, $\pi_n$ does not converge to $\pi = [1/2,1/2]$.
     }
     \item \textbf{Theorem} (see below)
     \items{
+        \item Gcd of the set of all numbers of steps it takes to go from from state $i$, back to state $i$ where the probability of that path is greater that 0
         \item Proof: See Lecture notes 24.
     }
-    
 }
 \eqs{
 \textbf{Theorem: Periodicity}\\
@@ -227,6 +230,8 @@ $\set{n > 0 | \pr{X_n = 5|X_0 = 5} > 0} = \set{6,9,...} \implies d(5) = 3$.
 \end{mdleftbar}
 \subsection*{Convergence of $\pi_n$}
 \items{
+    \item Irreducible MC $\implies$ fraction of time spent in state $i$ is equal to the invariant probability of that state
+    \item Irreducible + Aperiodic MC $\implies$ fraction of time spent in state $i$ is equal to and converges to the invariant probability of that state
     \item \textbf{Proof:} See EE126, or Lecture notes 24.
 }
 \eqs{
@@ -235,12 +240,31 @@ Let $X_n$ ba an irreducible and aperiodic MC with invariant distribution $\pi$
 \eq{\x{For all } i \in X, \pi_n(i) \rightarrow \pi(i), \xs{as} \ninfty}
 }
 \textbf{Example 1}
+\items{
+    \item Irreducible + Aperiodic MC $\implies$ fraction of time spent in state $i$ is equal to and converges to the invariant probability of that state
+}
 \dpic{conv1}
 \textbf{Example 2}
+\items{
+    \item Irreducible MC $\implies$ fraction of time spent in state $i$ is equal to the invariant probability of that state
+}
 \dpic{conv2}
 \textbf{Example 3}
+\items{
+    \item Loop implies aperiodicity
+}
 \dpic{conv3}
 \subsection*{Calculating $\pi$}
+\textbf{Method}
+\simple{
+    \item Let $P$ be irreducible
+    \item $\pi P = \pi \implies \pi[P -I] = 0$
+    \item Replace the last equation with ones $\pi1 = 1$ to get $\pi P_1=[0,0,1]$
+    \items{
+        \item Observe the sum of the columns of $P-I=0$, which shows the equations are redundant, which means the equations are redundant
+    }
+    \item Solve $\pi=[0,0,1]P_1^{-1}$
+}
 \example{Let $P$ be irreducible. Find $\pi$ where $P =\bmat{0.8&0.2&0\\0&0.3&0.7\\0.6&0.4&0}$}
 {
 One has $\pi P = \pi$, i.e., $\pi[P -I] = 0$ where $I$ is the identity matrix:\\
