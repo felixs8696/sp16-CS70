@@ -225,7 +225,9 @@ Let $X_1,X_2,\ldots$ be i.i.d. $B(p)$. Thus, $X_1 +\cdots+X_n = B(n,p)$.\\
 Here, $\mu = p$ and $\sigma = \sqrt{p(1-p)}$.\\
 CLT states that $\frac{X_1 +\cdots+X_n -np}{\sqrt{p(1-p)n}}\rightarrow\cur{N}(0,1)$ and $[A_n-2\frac{\sigma}{\sqrt{n}},A_n+2\frac{\sigma}{\sqrt{n}}]$ is a 95\% -CI for $\mu$ with $A_n = (X_1 +\cdots+X_n)/n$.\\
 Hence, $[A_n-2\frac{\sigma}{\sqrt{n}},A_n+2\frac{\sigma}{\sqrt{n}}]$ is a 95\% -CI for $p$.\\
-Since $\sigma \le 0.5$ (Use Chebyshev's to find an upper bound),
+Solve $\frac{d\var{X}}{dp}=\frac{d\sigma^2}{dp}$, test each result to find the $p$ that returns the max of the Variance\\
+Substitute the returned $p$ back in to solve for the max value of $\sigma$\\
+Since $\sigma \le 0.5$,
 Substitute $\sigma$ with the upper bound: $[A_n-2\frac{0.5}{\sqrt{n}},A_n+2\frac{0.5}{\sqrt{n}}]$ is a 95\% -CI for $p$.\\
 Thus, $[A_n-\frac{1}{\sqrt{n}},A_n+\frac{1}{\sqrt{n}}]$ is a 95\% -CI for $p$.
 }
