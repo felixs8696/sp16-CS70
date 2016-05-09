@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow,listings, mathrsfs,framed,scrextend,mathrsfs,mathtools}
+\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow,listings, mathrsfs,framed,scrextend,mathrsfs,mathtools,setspace}
 \usepackage[shortlabels]{enumitem}
 \usepackage[nobreak=true]{mdframed}
 \usepackage[margin=0.75in]{geometry}
@@ -51,11 +51,13 @@
 \newmdenv[topline=false, rightline=false, bottomline=false,%
   linewidth=3pt, innerrightmargin=0pt, leftmargin=4pt,%
   innerleftmargin=5pt, skipabove=5pt, skipbelow=5pt]{mdleftbar}
-\newcommand{\example}[2]{\textbf{Example: }\\#1\begin{mdleftbar}#2\end{mdleftbar}}
+\newcommand{\example}[2]{\textbf{Example: }\\#1\begin{mdleftbar}\onehalfspacing{#2}\end{mdleftbar}}
 \newcommand{\cur}{\mathscr}
 \newcommand{\bmat}[1]{\begin{bmatrix*}[r]#1\end{bmatrix*}}
 \newcommand{\bmatc}[1]{\begin{bmatrix*}[c]#1\end{bmatrix*}}
 \newcommand{\bmats}[2]{\begin{bmatrix}[#1]#2\end{bmatrix}}
+\newcommand{\case}[2]{\eq{#1=\begin{cases}#2\end{cases}}}
+\newcommand{\intlim}[2]{\int_{#1}^{#2}}
 
 \title{CS70 - Lecture \# Notes}
 \author{Name: Felix Su$\quad$SID: 25794773}
